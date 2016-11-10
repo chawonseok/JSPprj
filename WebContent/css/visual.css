@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+/*----------------------------#visual--------------------------*/
+#visual{
+	/* alpha는 앞에 표현하게 됨 #argb - > #20ff0000 */
+	background : #313131 url("../images/bg-visual.png") no-repeat center;
+	/* background-size: contain; */
+	/* min- */height:171px;	
+	border-top:3px solid #8CBA34;
+}

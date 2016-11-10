@@ -1,0 +1,172 @@
+@CHARSET "UTF-8";
+/*------------------------<<가로로큰방Level 1>>----------------------*/
+/* 가로선 설정 */
+#header{
+	height:70px;
+	/* min-height: 100px; */
+}
+#header .content-container{
+	position:relative;
+}
+
+#header header > section > h1{
+	display:none;
+}
+#header header > h1 {
+	position:absolute;
+	/* border:1px solid blue; */
+	left:0px;
+	top:23px;
+}
+/*----------------------------#main-menu--------------------------*/
+#main-menu{
+	/*자식들이 부모의 영역을 벗어나면 감싸게 만들기 - 세로영역 찾아주기*/
+	/* overflow:auto; */
+	/*가로 남는 범위를 줄여주려면 이 방식 쓰기 - 가로영역 만들어주기*/
+	display: inline-block;
+	font-family: "맑은 고딕";
+	font-weight: bold;
+	font-size: 15px;
+	color: #000;
+	/* border:1px solid red; */
+	position:absolute;
+	top:27px;
+	left:200px;
+}
+#main-menu a{
+	color:#000;
+	text-decoration: none;
+}
+#main-menu a:hover{
+	color:#ff0080;
+	text-decoration: underline;
+}
+#main-menu > h1{
+	display:none;
+}
+
+#main-menu > ul{
+	overflow:auto;
+}
+
+#main-menu > ul > li{
+	float:left;
+	padding-left: 24px;
+	background:url("../images/bg-main-menu-vsp.png") no-repeat 13px center;
+}
+
+/*두번째 애는 li:first-child+li이런식으로 하면됨*/
+#main-menu > ul > li:first-child{
+	padding-left: 0px;
+	background:none;
+}
+
+/* #main-menu > h1{
+	visibility:hidden;
+	outline만 놔두고 아에 화면에서 없애버리기
+	display:none;
+} */
+/*----------------------------#search-form---------------------------------------*/
+#search-form{
+	position:absolute;
+	border: 1px solid #8cba34;
+	display:inline-block;
+	top:21px;
+	left:468px;
+}
+#search-form h1,
+#search-form legend{
+	display:none;
+	float:left;
+}
+#search-form label{
+	/*너비 높이를 주기 위해서는 display가 block을 가지고 있어야됨*/
+	display:block;
+	float:left;
+/* 	background: red; */
+	height:25px;
+	font-family:"맑은 고딕", sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	color:#979797;
+	/*텍스트 높이 맞추기 -> 배경 높이와 맞추면됨*/
+	line-height: 25px;
+	padding-left:5px;
+	padding-right:5px;
+}
+#search-form input{
+	border:0px;
+	float:left;
+	height:25px;
+	/* border:0; */
+	display:block;
+	text-indent: 5px;
+}
+/*31*25*/
+#search-form input/* [type=submit] */:last-child{
+	background: url("../images/btn-zoom.png") no-repeat center;
+	border: 0px;
+	display:block;
+	width:31px;
+	height:25px;
+	/*사진이 삐져나올때 맞게 정렬시켜줌*/
+	vertical-align: middle;
+	border-left:1px solid #8cba34;
+	
+	/*택스트 밀어내는 방법*/
+	text-indent: -999px;
+}
+/*----------------------------#member-menu--------------------------*/
+#member-menu {
+	/*원래 가로영역이 부모의 가로 전체 -> 자신의 컨텐츠 크기만큼만 감싸게 만들기*/
+	position:absolute;
+	display:inline-block;
+	font-family: "맑은 고딕";
+	font-weight: bold;
+	font-size: 10px;
+	color: #000;
+	
+	right:0px;
+	top:20px;
+}
+#member-menu > h1{
+	display:none;
+}
+#member-menu > ul {
+/* 	border: 1px solid red; */
+	overflow:auto;
+}
+#member-menu > ul > li{
+	float:left;
+	padding-left: 9px;
+	background:url("../images/bg-member-menu-sp.png") no-repeat 5px center;
+}
+#member-menu > ul > li:first-child{
+	padding-left: 0px;
+	background:none;
+}
+#member-menu a{
+	color:#979797;
+	text-decoration:none;
+}
+#member-menu a:hover{
+	text-decoration: underline;
+}
+/*----------------------------#customer-menu---------------------------------------*/
+#customer-menu{
+/* 	border: 1px solid red; */
+	/* display:inline-block; */
+	position:absolute;
+	top:40px;
+	right:0px;
+}
+#customer-menu h1{
+	display:none;
+}
+#customer-menu > ul{
+	/* order:1px solid red; */
+	overflow:auto;
+}
+#customer-menu > ul > li{
+	float:left;
+}

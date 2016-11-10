@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suwon.web.dao.MemberDao">
+   <select id="get" resultType="com.suwon.web.entities.Member"> 
+      SELECT * FROM MEMBERS WHERE MID=#{mid}
+   </select>
+   <select id="getList" resultType="com.suwon.web.entities.Member">
+      
+      SELECT * FROM 
+      (
+         SELECT 
+            ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,
+            MEMBERS.*
+         FROM MEMBERS
+         WHERE ${param2} LIKE '%${param3}%'
+      ) M
+      WHERE NUM BETWEEN 1+(#{param1}-1)*10 AND #{param1}*10   
+      
+   </select>
+   <update id="update" parameterType="com.suwon.web.entities.Member">
+      <!-- 업데이트야요 -->
+      UPDATE MEMBERS 
+      SET PWD=#{pwd}, NAME=#{name}, NICNAME=#{nicName},
+         EMAIL=#{email}
+      WHERE MID=#{mid}
+   </update>
+   <delete id="delete">
+      DELETE MEMBERS WHERE MID=#{mid} 
+   </delete>
+   <insert id="insert" parameterType="com.suwon.web.entities.Member">      
+      INSERT INTO MEMBERS(Mid, Pwd, Name, NicName, Email, Birth, Phone, Picture, Gender)
+      VALUES(#{mid}, #{pwd}, #{name}, #{nicName}, #{email}, #{birth}, #{phone}, #{picture}, #{gender})
+   </insert>   
+</mapper>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- NoticeDao 인터페이스를 직접 구현해줄 필요가 사라짐 -->
+<mapper namespace="com.suwon.web.dao.NoticeDao">
+	<select id="get" resultType="com.suwon.web.entities.Notice"> 
+		<!-- 값을넘겨 받을 때는 #을 사용 -->
+		SELECT * 
+		FROM NOTICES 
+		WHERE CODE = #{code}		
+	</select>
+	<!-- 반환값이 List지만 List중 하나의 객체의 형태만 넘겨주면 된다 -->
+	<!-- <select id="getList" resultType="com.suwon.web.model.NoticeModel" > 
+		값을넘겨 받을 때는 #을 사용  -> 인자 없는 친구
+		SELECT * 
+		FROM NOTICES 
+		ORDER BY REGDATE DESC	
+	</select> -->
+	<select id="getList" resultType="com.suwon.web.model.NoticeModel">
+	<!-- String param2는 문자형이기 때문에 그대로 꽂아너면 title이 'title'이 되버린다 이때는 # 대신 $ 쓰기 -->	
+		SELECT * FROM (
+			SELECT
+			ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,
+			NOTICES_VIEW.*
+			FROM NOTICES_VIEW
+			WHERE ${param2} LIKE '%${param3}%'
+			) N
+		WHERE NUM BETWEEN (1+(#{param1}-1)*10) AND ((#{param1}*10))
+	</select>
+		
+	<select id="getCount" resultType="Integer">
+		SELECT COUNT(CODE) COUNT 
+		FROM NOTICES_VIEW 
+		WHERE ${param1} LIKE '%${param2}%'
+	</select>
+		
+	<update id="update" parameterType="com.suwon.web.entities.Notice" >
+		UPDATE NOTICES 
+			SET TITLE= #{title}, CONTENT= #{content} 
+		WHERE CODE= #{code}
+	</update>
+	
+	<delete id="delete"> <!-- parameterType="String" -->
+		DELETE NOTICES WHERE CODE = #{code}
+	</delete>
+	
+	<insert id="insert" parameterType="com.suwon.web.entities.Notice">
+		<selectKey order="BEFORE" keyProperty="code" resultType="String">
+			SELECT ISNULL(MAX(CONVERT(INT,CODE)),0)+1 AS CODE FROM NOTICES
+		</selectKey>
+		INSERT INTO 
+			NOTICES(CODE,TITLE,WRITER, CONTENT)
+			VALUES(#{code}, #{title}, #{writer}, #{content})
+	</insert>
+	
+	<select id="getLastCode" resultType="String">
+		SELECT ISNULL(MAX(CONVERT(INT,CODE)),0) AS CODE FROM NOTICES
+	</select>
+	
+	<select id="getPrev" resultType="com.suwon.web.entities.Notice">
+		select top 1 * from notices
+		where code &gt; cast(#{code} as int)
+		order by regdate asc
+	</select>
+	
+	<select id="getNext" resultType="com.suwon.web.entities.Notice">
+		select top 1 * from notices
+		where code &lt; cast(#{code} as int)
+		order by regdate desc
+	</select>
+	
+	<update id="hitUp">
+		update notices set hit = hit+1
+		where code = #{code}	
+	</update>
+
+</mapper>

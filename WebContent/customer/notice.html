@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시험중입니다</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet" />
+<link href="../css/style.css" type="text/css" rel="stylesheet" />
+
+<script src="../js/modernizr-custom.js">
+	window.onload = function() {
+		document.createElement("main");
+	};
+</script>
+
+</head>
+<body>
+	<!-- 제목부터 헤더까지 감싸줄 친구ㅡ -->
+	<div id="header">
+		<div class="content-container">
+			<!--------------------------------------<header>------------------------------------>
+			<header>
+			<!-- 제목 -->
+			<h1 id="Logo">
+				<img src="../images/logo.png" alt="뉴렉처 온라인" />
+			</h1>
+				<section>
+					<h1 class="hidden">헤더</h1>
+					<nav id="main-menu">
+						<h1 class="hidden">메인메뉴</h1>
+						<ul>
+							<li><a href="">뉴렉과정</a></li>
+							<li><a href="">학습가이드</a></li>
+							<li><a href="">강좌선택</a></li>
+						</ul>
+					</nav>
+
+					<section id="search-form">
+						<h1 class="hidden">강좌검색 폼</h1>
+						<form>
+							<fieldset>
+								<legend>과정검색필드</legend>
+								<label>과정검색</label> 
+								<input type="text" value=""/> 
+								<input type="submit" value="검색" />
+							</fieldset>
+						</form>
+					</section>
+
+					<nav id="member-menu">
+						<h1 class="hidden">회원메뉴</h1>
+						<ul>
+							<li><a href="">HOME</a></li>
+							<li><a href="">로그인</a></li>
+							<li><a href="">회원가입</a></li>
+						</ul>
+					</nav>
+
+					<nav id="customer-menu">
+						<h1 class="hidden">고객메뉴</h1>
+						<ul>
+							<li><a href=""><img src="../images/txt-mypage.png"
+									alt="마이페이지" /></a></li>
+							<li><a href=""><img src="../images/txt-customer.png"
+									alt="고객센터" /></a></li>
+						</ul>
+					</nav>
+				</section>
+			</header>
+		</div>
+	</div>
+
+	<!-- --------------------------------------<visual>------------------------------------ -->
+
+	<!-- 대문사진 -->
+	<div id="visual">
+		<div class="content-container"></div>
+	</div>
+
+
+
+	<!-- aside ~ main까지 가로영역 -->
+	<div id="body">
+		<div class="content-container clearfix">
+			<!-- --------------------------------------aside------------------------------------ -->
+			<aside id="aside">
+				<h1>고객센터</h1>
+
+				<nav id="aside-menu">
+					<h1 class="hidden">고객센터메뉴</h1>
+					<ul>
+						<li><a href="">공지사항</a></li>
+						<li><a href="">1:1고객문의</a></li>
+						<li><a href="">학습안내</a></li>
+					</ul>
+				</nav>
+
+				<nav>
+					<h1>추천사이트</h1>
+					<ul>
+						<li><img src="../images/answeris.png" alt="앤서이즈" /></li>
+						<li><img src="../images/w3c.png" alt="W3C" /></li>
+						<li><img src="../images/microsoft.png" alt="마이크로소프트" /></li>
+					</ul>
+				</nav>
+
+				<nav>
+					<h1>구글광고</h1>
+				</nav>
+			</aside>
+
+			<!-- --------------------------------------main------------------------------------ -->
+
+			<main>
+				<h2>공지사항</h2>
+
+				<!-- <div id="breadlet">
+					<h3>breadlet</h3>
+					<ul>
+						<li>home</li>
+						<li>고객센터</li>
+						<li>공지사항</li>
+					</ul>
+				</div> -->
+
+				<div>
+					<h3>공지사항 검색폼</h3>
+					<form>
+						<fieldset>
+							<legend>공지사항 검색 필드</legend>
+							<select>
+								<label>검색분류</label>
+								<option>제목</option>
+								<option>작성자</option>
+							</select> <label>검색어</label> <input type="text" /> <input type="submit"
+								value="검색결과" />
+						</fieldset>
+					</form>
+				</div>
+
+				<div>
+					<h3>공지사항 검색목록</h3>
+					<table border=1>
+						<thead>
+							<tr>
+								<td>번호</td>
+								<td>제목</td>
+								<td>작성자</td>
+								<td>작성일</td>
+								<td>조회수</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<!-- td안에서도 다르게 처리하고 싶으면 th태그를 사용해도된다 -->
+								<th>44</th>
+								<td>서적과 사이트 개편에 대한 안내</td>
+								<td>admin</td>
+								<td>2016-09-21</td>
+								<td>145</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div>
+						<h3>현재 페이지</h3>
+						<div>1/3 pages</div>
+					</div>
+
+					<div>
+						<h3>페이지</h3>
+						<div>
+							<div>
+								<img src="../images/btn-prev.png" alt="이전" />
+							</div>
+
+							<ul>
+								<li>1</li>
+								<li>2</li>
+								<li>3</li>
+							</ul>
+
+							<div>
+								<img src="../images/btn-next.png" alt="다음" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+
+	<!-- --------------------------------------footer------------------------------------ -->
+	<footer id="footer">
+		<div class="content-container">
+			<h2>회사정보</h2>
+			<dl>
+				<h3>내용</h3>
+				<dt>주소:</dt>
+				<dd>서울특별시 마포구 토정로35길 11, 인우빌딩 5층 266호</dd>
+				<dt>관리자메일 :</dt>
+				<dd>admin@newlecture.com</dd>
+				<dt>사업자 등록번호 :</dt>
+				<dd>132-18-46763</dd>
+				<dt>통신 판매업 신고 :</dt>
+				<dd>제 2013-서울강동-0969 호</dd>
+				<dt>상호뉴렉처대표:</dt>
+				<dd>박용우전화번호070-4206-4084 [죄송합니다. 당분간 문의내용은 고개센터 메뉴에서 1:1 문의를
+					이용해주시기 바랍니다]</dd>
+			</dl>
+			<div>Copyright ⓒ newlecture.com 2012-2014 All Right Reserved.
+				Contact admin@newlecture.com for more information
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

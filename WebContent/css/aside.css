@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+/*------------------------<<세로로작은방Level 3>>----------------------*/
+#aside{
+	background: url("../images/bg-aside-title.png") no-repeat right top;
+	min-height:inherit;
+	width:205px;
+	float:left;
+}
+#aside > h1{
+	font-size:24px;
+	font-weight:bold;
+	font-family:"맑은 고딕";
+	font-color:black;
+}
+#aside-menu > ul > li{
+	height:26px;
+	line-height:26px;
+	background: url("../images/bg-aside-menu-hsp.png") no-repeat bottom;
+}
+/* #aside-menu > ul > li:last-child{
+	background: white;
+	border-bottom: 1px solid black;	
+} */
+#aside-menu > ul > li > a{
+	text-decoration:none;
+	color:black;
+	padding-left:26px;
+}
+#aside-menu > ul > li a:hover{
+	padding-left:26px;
+	background: url("../images/icon-current.png") no-repeat 15px center;
+}

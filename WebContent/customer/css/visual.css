@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+@import url("../../css/visual.css");
+
+#visual .content-container{
+	background : #313131 url("../../images/customer/visual.png") no-repeat center;
+}

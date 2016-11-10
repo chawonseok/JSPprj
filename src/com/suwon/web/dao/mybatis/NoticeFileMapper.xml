@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- NoticeDao 인터페이스를 직접 구현해줄 필요가 사라짐 -->
+<mapper namespace="com.suwon.web.dao.NoticeFileDao">
+	<select id="getList" resultType="com.suwon.web.entities.NoticeFile">
+		SELECT * FROM
+		NOTICEFILES WHERE NOTICECODE = #{noticeCode}
+	</select>
+
+	<update id="update" parameterType="com.suwon.web.entities.NoticeFile">
+		UPDATE NOTICEFILES
+		SET SRC = #{src}
+		WHERE CODE= #{code}
+	</update>
+
+	<delete id="delete">
+		DELETE NOTICES WHERE CODE = #{code}
+	</delete>
+
+	<insert id="insert" parameterType="com.suwon.web.entities.NoticeFile">
+		<selectKey order="BEFORE" keyProperty="code" resultType="String">
+			SELECT ISNULL(MAX(CONVERT(INT,CODE)),0)+1 AS CODE FROM NOTICEFILES
+		</selectKey>
+		INSERT INTO
+		NOTICEFILES(CODE, SRC, NOTICECODE)
+		VALUES(#{code}, #{src}, #{noticeCode})
+	</insert>
+</mapper>

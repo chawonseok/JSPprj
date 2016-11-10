@@ -1,0 +1,69 @@
+@CHARSET "UTF-8";
+
+body .hidden{
+	display:none;
+	
+}
+body .main{
+	padding-left:35px;
+	padding-top:45px;
+	/*width:720px;*/
+}
+
+body .main-title{
+	font-family: "맑은 고딕", 고딕, sans-serif;
+	font-weight: bold;
+	font-size: 21px;
+	color: #646464;
+	padding-left:25px;
+	background:url("../images/icon-main-title.png") no-repeat;
+}
+
+body .breadcrumb{
+	display:inline-block;
+}
+body .breadcrumb > ul{
+	overflow:auto;
+}
+body .breadcrumb > ul > li{
+	float:left;
+	font-family: "돋움", Arial, sans-serif;
+	font-size: 11px;
+	color: #979797;
+	padding-left: 10px;
+	background:url("../images/icon-path.png") no-repeat left center;
+}
+body .breadcrumb > ul > li:first-child{
+	padding-left: 20px;
+	background:url("../images/icon-home.png") no-repeat left center;
+}
+/*--------------구조를 이용한 스타일-----------------------
+body .table-container{
+	border-top: 2px solid #8cba35;
+	
+}
+body .table-container table{
+	width:100%
+}
+body .table-container table tr{
+	height: 33px;
+	line-height: 33px;
+}
+body .table-container table td{
+	border-bottom: 1px solid #e9e9e9; */
+}
+/*--------------이름를 이용한 스타일-----------------------*/
+body .table-container1{
+	border-top: 2px solid #8cba35;
+	
+}
+body .table{
+	width:100%
+}
+body .tr{
+	height: 33px;
+	line-height: 33px;
+}
+body .td{
+	border-bottom: 1px solid #e9e9e9;
+}

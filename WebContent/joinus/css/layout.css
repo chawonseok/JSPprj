@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+/*기본 틀의 css를 가지는 친구*/
+/*css의 오버라이드 시스템을 만들기*/
+@import url("../../css/aside.css");
+@import url("../../css/footer.css");
+@import url("../../css/header.css");
+@import url("visual.css");
+@import url("../../css/reset.css");
+@IMPORT url("../../css/style.css");
+/*------------------------집중화-------------------------------*/
+body .hidden{
+	display:none;
+}
+/*
+body .h-menu > ul > li{
+	float:left;
+}
+부모영역 삐져나가는거 억지로 맞춰주기
+body .clearfix {
+  overflow: auto;
+  zoom: 1;
+}*/
+
+/*----------------------------#body--------------------------*/
+#body{
+	min-height: 300px;
+	border-top:5px solid #8CBA34;
+	margin-top:1px;
+
+}
+#body > .content-container{	
+	background: #313131 url("../../images/bg-body.png") repeat-y;
+	position:relative;	
+}
+main{
+	min-height:inherit;
+	width:calc(100% - 205px);
+	float:left;
+}
+/*------------------------<<세로로큰방Level 2>>----------------------*/
+/*세로선 설정*/
+.content-container{
+	/*부모 높이에 맞는 높이 설정*/
+	height: inherit/* 100% */;
+	width:70%;
+	margin: auto;
+	position:relative;
+}
+
+
+
+/* #eagle{
+	position:relative;
+	left:100px;
+	top:50px;
+	opacity:0.5;
+	width:600px;
+	heigt:100px;
+} */
+
+/* #breadlet{
+	position: absolute;
+	left:50px;
+	top:50px;
+	width:100px;
+} */
+
+/* #test{
+	width: 150px;
+	height: 50px;
+	border: 1px solid white;
+	background: url("../images/logo.png") no-repeat left top;
+	background-size:contain;
+	background-attachment: fixed;
+	overflow:scroll;
+} */
